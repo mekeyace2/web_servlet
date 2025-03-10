@@ -16,6 +16,16 @@ if(total_page != null || !total_page.equals(null)){
 	float pg2 = Integer.parseInt(total_page) / 3f;
 	pg = (int)Math.ceil(pg2); 
 }
+
+/*
+get page번호를 가져오는 방식
+최초 공지사항 리스트 페이지에 접근시 페이지 번호가 없을 수 있음 또는 
+페이지번호가 1을 클릭했을 경우
+*/
+String pno = request.getParameter("pageno");
+if(pno == null || pno.equals("1")){
+	pno = "1";
+}
 %>
 <!-- View -->
 <!DOCTYPE html>
@@ -39,7 +49,9 @@ if(total_page != null || !total_page.equals(null)){
 <tbody>
 <%
 	int f;
-	int total = notice.size();	//리스트 출력 번호를 총 데이터 갯수로 처리	
+	//리스트 출력 번호를 총 데이터 갯수로 처리
+	//총 데이터 갯수 - ((페이지번호 - 1) * 한페이지당 출력갯수)
+	int total = Integer.parseInt(total_page) - ((Integer.parseInt(pno)-1) * 3);	
 	for(f=0; f<notice.size(); f++){
 %>
 	<tr height="30" align="center">

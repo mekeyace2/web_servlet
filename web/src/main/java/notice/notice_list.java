@@ -15,6 +15,7 @@ public class notice_list extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//사용자가 페이지 번호를 클릭시 해당 값을 받는 역활
 		String pageno = request.getParameter("pageno");
+	
 		if(pageno == null || pageno.equals("1")) {	//최초 해당 게시판에 접속시 페이지 배열번호 0로 처리
 			pageno = "0";
 		}
