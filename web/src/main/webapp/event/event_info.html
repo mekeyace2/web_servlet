@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>2025년 SUMMER!! SUPER EVENT!!</title>
+<style>
+.memo{
+resize:none; 
+}
+</style>
+</head>
+<body>
+<form id="f" method="post" action="./event_infook.do">
+<p>[이벤트 참여!!]</p>
+고객명 : <input type="text" name="ename"><br>
+연락처 : <input type="text" name="etel" maxlength="11" placeholder="-는 미입력"><br>
+이메일 : <input type="text" name="email"><br>
+이벤트 참여이유 : <textarea cols="50" rows="3" class="memo" name="ememo"></textarea><br>
+<input type="checkbox" name="info1" value="Y">개인정보활용<br>
+<input type="checkbox" name="info2" value="Y">제3자의 정보제공<br>
+<input type="button" value="이벤트 참여" onclick="eventok()">
+</form>
+<br><br><br>
+<input type="button" value="정규식코드" onclick="wordck()">
+
+</body>
+<script src="./event_info.js?v=2"></script>
+
+</html>

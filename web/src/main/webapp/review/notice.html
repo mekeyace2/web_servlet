@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<!-- 
+javascript : 4.0 => PC => Mobile(X) => var => function
+
+ECMAscript(es) : Javascipt Update => let(변수), const(상수)
+var aa = function(), class => es4
+
+ES5 => Javascript 5.0 => Jquery(X) => APP => ES6
+
+Angular(X), React, Vue = ECMA => ECMA2024
+ -->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>게시판 글쓰기</title>
+</head>
+<body>
+<form id="frm" method="post" action="./noticeok.do">
+<!-- hidden : Front & Backend가 서로 약속된 데이터를 이관 받는 속성 -->
+<input type="hidden" name="se" value="korea.com">
+제목 : <input type="text" name="subject"><br>
+글쓴이 : <input type="text" name="writer"><br>
+내용 : <textarea name="wtext" style="width:500px; height:300px;"></textarea>
+<br>
+<input type="button" value="글등록" onclick="notice_writer()">
+</form>
+</body>
+<script src="./notice.js"></script>
+</html>

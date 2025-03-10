@@ -1,0 +1,13 @@
+create table event(
+eidx int not null auto_increment,
+ename char(50) not null,
+etel char(11) not null,
+email varchar(50) not null,
+info1 enum('Y','N') not null default 'N',
+info2 enum('Y','N') not null default 'N',
+ememo text not null,
+ejoin timestamp not null default current_timestamp,
+primary key(eidx),
+unique (etel),
+unique (email)
+);

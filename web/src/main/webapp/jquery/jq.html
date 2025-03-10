@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Jquery 사용법</title>
+<!-- jquery 엔진을 로드 -->
+<script src="./jquery.js"></script>
+<script>
+//$(document).ready(function(){
+//$(()=>{
+		
+$(function(){
+	$("#btn").click(function(){	//id 속성으로 이벤트 핸들링
+		console.log("아이디 테스트!!!");
+	});
+
+	$(".btn").click(function(){	//class 속성으로 이벤트 핸들링
+		console.log("클래스 테스트!!!");
+	});
+	
+	$("#btn2").click(function(){
+		//val() = value
+		
+		/*	//사용자가 입력한 값을 가져오는 역활
+		var $m = $("#mid").val();
+		console.log($m);
+		*/
+		//$("#mid").val("홍길동"); //해당 오브젝트에 값을 이관
+		var $m = $("#mid").val();
+		if($m==""){
+			alert("아이디를 입력하세요!");
+			$("#mid").focus();
+		}
+		else{
+			location.href="./jq2.html";
+		}
+	});
+
+	
+		//click, submit, change	
+		$("#btn3").click(function(){
+			$abc();	
+			abc();
+			kkk();
+		});
+		
+		$abc = function(){	//일반 jquery 함수
+			console.log("abc!!!");	
+		}
+		function kkk(){
+			abc();
+			console.log("kkk함수 입니다.");
+		}
+});
+function abc(){		//javascript 함수
+	console.log("Test!!!!");
+}		
+function zzz(){
+	$abc();	
+	//kkk();  //jquery안에 js함수를 호출 할 수 없음
+}
+</script>
+</head>
+<body>
+<input type="button" value="클릭!!" id="btn"><br>
+<input type="button" value="클릭!!" class="btn">
+<br><br><br>
+<input type="text" name="mid" id="mid">
+<input type="button" value="중복체크" id="btn2">
+<br><br><br>
+<input type="button" value="핸들링" id="btn3">
+<input type="button" value="핸들링2" onclick="zzz()">
+
+</body>
+</html>

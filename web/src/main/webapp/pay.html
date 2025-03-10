@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상품 할인 및 적립금 사용 적용</title>
+</head>
+<style>
+body{
+    font-size: 13px;
+    box-sizing: border-box;
+}
+.m1 { width: 100px; height: 25px; text-align: right;}
+.m2 { width: 50px; height: 25px; text-align: right; }
+.btn {
+    width: 100px;
+    height: 30px;
+}
+.font1 {
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    color: red;
+}
+.view {
+    display: flex;
+    top: 10px;
+    position: relative;
+}
+.total{
+    width: 100px;
+    height: 30px;
+    border: 1px solid #ccc;
+    padding-right: 5px;
+    line-height: 30px;
+    font-size: 14px;
+    text-align: right;
+    box-sizing: border-box;
+}
+</style>
+<!--
+    할인율과 적립금 사용 금액을 입력 후 적용하기 버튼 클릭시
+    최종 결제 금액이 변경 되어야 합니다.
+    할인율은 최대 50%까지 이며, 적립금은 최대 5000 까지 적용 되도록 합니다.
+-->
+<body>
+<form id="frm" method="post" action="./payok.do">
+    <fieldset style="height: 90px;">
+    <legend>상품 할인 및 적립금 사용 적용</legend>
+    결제금액 : <input type="text" value="50000" name="money" class="m1" readonly> 원
+    | 할인율 : <input type="text" class="m2" name="sales" value="0" maxlength="2"> % 할인
+    | 적립금 사용 : <input type="text" class="m1" value="0" name="point" maxlength="4">
+    <input type="button" value="적용하기" class="btn"> 
+    <span class="view">
+    <font class="font1"> 최종 결제 금액 : </font>
+    <div class="total">50000</div>
+    </span>
+    </fieldset>   
+</form>    
+    <input type="button" value="결제하기" class="btn" onclick="step_pay()">
+</body>
+<script>
+function step_pay(){
+	if(frm.sales.value==""){
+		alert("할인율을 입력해 주시길 바랍니다.");
+		frm.sales.value = 0;
+	}
+	else if(frm.point.value==""){
+		alert("적립금을 입력해 주시길 바랍니다.");
+		frm.point.value = 0;
+	}
+	else{
+		frm.submit();
+	}
+}
+</script>
+
+</html>

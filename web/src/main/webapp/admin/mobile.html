@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>모바일 시스템 예제</title>
+</head>
+<body>
+<!-- http://172.30.1.xx:8080/web/admin/mobile.html  -->
+<form id="frm" method="post" action="./mobileok.do" enctype="multipart/form-data">
+<!-- 보안관련 사항을 체크하는 형태 -->
+<input type="hidden" name="security" value="m">
+
+<p>모바일 전용 상품리뷰</p>
+고객명 : <input type="text" name="mname"><br>
+상품명 : <input type="text" name="pname"><br>
+별점 : <select name="star">
+<option value="1">1점</option>
+<option value="3">3점</option>
+<option value="5">5점</option>
+</select><br>
+<!-- 
+Mobile 전용 디바이스 I/O 형태 입니다.
+file : accept(image) ,capture(camera) => 실시간 사진 전송
+file : accept(video) ,capture(camcorder) => 실시간 동영상 촬영을 전송
+file : accept(audio) ,capture(microphone) => 실시간 음성 녹을 파일 전송
+ -->
+리뷰이미지 : <input type="file" name="mfile" accept="image/*" capture="camera"><br>
+리뷰내용 : <textarea name="mtext" rows="2" cols="50" style="width: 100%;"></textarea>
+<input type="button" value="리뷰등록" id="btn">
+</form>
+</body>
+<script src="./mobile.js?v=1"></script>
+</html>
+<!-- 
+js : 
+onclick, onsubmit, onchange, onkeypress, onkeyup, onkeydown
+
+es : addEventListener 핸들링
+-->
+

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="https://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
+  <!-- 
+  servlet-name : 가상의 이름이며, 동일한 이름은 사용하지 못함 
+  servlet-class : package + java 클래스명
+  url-pattern : 해당 java 파일을 WEB에서 가상의 경로로 사용할 수 있도록 설정
+  -->
+  <display-name>web</display-name>
+  <!-- admin이라는 실제 디렉토리가 생성되었을 경우 package에도 admin을 생성하게 됩니다. -->
+   
+  <servlet>
+  <servlet-name>adminok</servlet-name>
+  <servlet-class>admin.adminok</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>adminok</servlet-name>
+  <url-pattern>/admin/adminok.do</url-pattern><!-- Front경로에 맞춤 -->
+  </servlet-mapping>
+  
+  <servlet>
+  <servlet-name>mobileok</servlet-name>
+  <servlet-class>admin.mobileok</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>mobileok</servlet-name>
+  <url-pattern>/admin/mobileok.do</url-pattern>
+  </servlet-mapping>
+   
+   <servlet>
+  <servlet-name>main</servlet-name>
+  <servlet-class>admin.main</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>main</servlet-name>
+  <url-pattern>/admin/main.do</url-pattern>
+  </servlet-mapping>
+   
+  
+  
+  <servlet>
+  <servlet-name>deliveryok</servlet-name>
+  <servlet-class>web.deliveryok</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>deliveryok</servlet-name>
+  <url-pattern>/deliveryok.do</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+  	<servlet-name>loginok</servlet-name>
+  	<servlet-class>web.login</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>loginok</servlet-name>
+  	<url-pattern>/loginok.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  <servlet-name>payok</servlet-name>
+  <servlet-class>web.payok</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  <servlet-name>payok</servlet-name>
+  <url-pattern>/payok.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  <servlet-name>pollok</servlet-name>
+  <servlet-class>web.pollok</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  <servlet-name>pollok</servlet-name>
+  <url-pattern>/pollok.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  <servlet-name>idsearch</servlet-name>
+  <servlet-class>web.idsearch</servlet-class>
+  </servlet> 
+  <servlet-mapping>
+  <servlet-name>idsearch</servlet-name>
+  <url-pattern>/idsearch.do</url-pattern>
+  </servlet-mapping> 
+    
+  <servlet>
+  <servlet-name>upload</servlet-name>
+  <servlet-class>web.fileupload</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>upload</servlet-name>
+  <url-pattern>/fileupload.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  <servlet-name>multifile</servlet-name>
+  <servlet-class>web.multi_file</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>multifile</servlet-name>
+  <url-pattern>/multi_file.do</url-pattern>  
+  </servlet-mapping>  
+
+  <servlet>
+  <servlet-name>part2</servlet-name>
+  <servlet-class>web.part2</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  <servlet-name>part2</servlet-name>
+  <url-pattern>/part2.do</url-pattern>
+  </servlet-mapping>
+
+
+  <servlet>
+  <servlet-name>part3</servlet-name>
+  <servlet-class>web.part3</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  <servlet-name>part3</servlet-name>
+  <url-pattern>/part3.do</url-pattern>
+  </servlet-mapping>
+
+ <servlet>
+  <servlet-name>encry</servlet-name>
+  <servlet-class>web.encry</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  <servlet-name>encry</servlet-name>
+  <url-pattern>/encry.do</url-pattern>
+  </servlet-mapping>
+
+</web-app>

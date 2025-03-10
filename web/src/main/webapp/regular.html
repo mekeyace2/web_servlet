@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>자바스크립트 기준 정규식 코드 사용법</title>
+</head>
+<body>
+</body>
+<script>
+//정규식코드 : replace, replaceAll, test, match, exec, split, search
+/*
+ 정규식 코드 옵션 
+ g (전체문자열을 파악하는 옵션) 
+ i (대문자 소문자를 동일하는 단어로 인식)
+ [] (문자열의 배열 범위)
+ ^ (부정의 뜻을 가진 옵션 not)
+ {} (패턴 형태 문자 자릿수 범위)
+ \ (문자를 구분하여 설정)
+ */
+//정규식코드 패턴
+/*	//replace
+var word = "12A34a5a6Abz001";
+var regp = /[a-z]/gi;
+console.log(word.replace(regp,""));
+*/
+//trim(정규식 코드 아님) : 앞 뒤 공백을 없앰
+/*
+var word = " 1 a 2 c 3 d ";
+console.log(word);
+console.log(word.trim());
+var regp = / /g;
+console.log(word.replace(regp,""));
+*/
+
+//test : true, false
+/*
+var word = "01012345678";
+//var regp = /[a-z]/g;		//a~z까지의 문자 있는지 확인
+var regp = /[^0-9]/g;		//0~9까지의 문자 외에 다른 문자가 있는지 확인
+console.log(regp.test(word));
+*/
+/*
+var word = "(주)GS";
+var regp = /[^ㄱ-힣a-zA-Z()]/g;
+console.log(regp.test(word));
+*/
+
+//match : 배열로 체크 null일 경우 값을 찾을 수 없을 경우
+/*
+var word = "ho-ng@nate.com";
+var regp = /[^@.a-z-]/gi;
+console.log(word.match(regp));
+*/
+//exec : 배열로 체크 null일 경우 값을 찾을 수 없을 경우
+/*
+var word = "hong@gmail.com";
+var regp = /[A-Z]/g;
+console.log(regp.exec(word));
+*/
+
+/* test 정규식을 이용하여 패턴과 함께 단어를 체크하는 코드 */
+/*
+var word = "hong@korea.co.kr";
+var word2 = word.replace(/ /g,"");	//공백삭제
+console.log(word2);
+var regp = /^[a-z0-9.-_]+\@[a-z0-9ㄱ-힣]+\.[a-z0-9ㄱ-힣]{2,}/i;
+console.log(regp.test(word2));
+*/
+
+/* 연락처 : 9 ~ 11, 휴대폰 : 10 ~ 11 */
+/*
+var word = "023311243"; 
+var word2 = word.replace(/ /g,"");	//모든 공백제거
+if(word2.length < 9){
+	console.log("정상적인 전화번호를 입력하세요!!");
+}
+else{
+	var regp = /[^0-9]/g;
+	var check = regp.test(word2);
+	console.log(check);
+	if(check==true){
+		console.log("올바른 연락처가 아닙니다.");
+	}
+	else{
+		console.log("올바른 연락처 입니다.");	
+	}
+}
+*/
+
+
+var word = "01055201009";
+if(word.length < 10 || word.length > 11){
+	alert("올바른 휴대폰 번호를 입력하세요!");
+}
+else{
+	var regp = /^01\d{8,9}/g;
+	console.log(word);
+	console.log(regp.test(word));
+}
+
+
+
+</script>
+</html>

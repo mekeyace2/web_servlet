@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>아이디 찾기</title>
+</head>
+<body>
+<!-- 
+required(submit) : HTML5 전용 무조건 필수로 값을 받는 속성 
+pattern : 정규식 코드 형태로 규칙적인 데이터를 입력하도록 설정하는 속성,{},(),[]
+\d(숫자), \D(문자) 로 입력값의 범위를 설정할 수 있습니다.
+\b(문자)
+-->
+<form id="frm" method="post" action="./idsearch.do">
+고객명 : <input type="text" name="mname" required><br>
+연락처 : <input type="tel" pattern="(010|011)\d{3,4}\d{4}" name="mtel" maxlength="11" required><br>
+이메일 : <input type="email" name="memail" pattern="[a-zA-Z0-9._-]+@" required><br>
+<input type="submit" value="아이디 찾기">
+</form>
+</body>
+</html>
