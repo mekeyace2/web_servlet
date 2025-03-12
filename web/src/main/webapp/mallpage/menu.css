@@ -1,0 +1,28 @@
+.menu-list{
+    width: 1100px;
+    height: 60px;
+    margin: 0 auto;
+}
+.menu-list > ul {
+    width: inherit;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: nowrap;
+    height: inherit;
+    align-items: center;
+    text-align: center;
+}
+.menu-list > ul > li {
+    width: 100%;
+    height: inherit;
+    line-height: 60px;
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: black;
+}
+.menu-list > ul > li:hover{
+    color: rgb(195, 134, 22);
+}
