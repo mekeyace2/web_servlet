@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 @WebServlet("/mallpage/loginok.do")
 public class loginok extends HttpServlet {
@@ -30,7 +31,11 @@ public class loginok extends HttpServlet {
 				
 		if(result == "ok") {
 			//DTO를 활용하여 Session을 생성
-			
+			//HttpSession : Controller (loginok, logout)에서만 설정
+			HttpSession session = request.getSession();
+			session.setAttribute("mid", mb2.getMid());
+			session.setAttribute("mname", mb2.getMname());
+			session.setAttribute("memail", mb2.getMemail());
 			
 			this.pw.print("<script>"
 					+ "alert('로그인 하셨습니다.');"
