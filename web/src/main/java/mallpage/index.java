@@ -17,8 +17,6 @@ public class index extends HttpServlet {
     //copyright 정보 Model
 	copyright cr = new copyright();
 	
-	
-	
 
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
