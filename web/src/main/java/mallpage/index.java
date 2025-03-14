@@ -18,6 +18,9 @@ public class index extends HttpServlet {
 	copyright cr = new copyright();
 	
 	
+	
+
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ArrayList<String> cpdata = this.cr.copyright_info();
 		request.setAttribute("cpdata", cpdata);
