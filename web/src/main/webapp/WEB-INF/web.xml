@@ -37,7 +37,7 @@
 
 
 
-  
+  <!-- 
   <servlet>
   <servlet-name>notice_list</servlet-name>
   <servlet-class>notice.notice_list</servlet-class>
@@ -46,7 +46,7 @@
   <servlet-name>notice_list</servlet-name>
   <url-pattern>/notice/notice_list.do</url-pattern>
   </servlet-mapping>
-  
+   -->
   
   
   <servlet>
